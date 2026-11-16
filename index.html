@@ -4,387 +4,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FYZ PIZZA HUT | Official Website</title>
+<title>FYZ PIZZA HUT | Fast Food</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-:root {
-    --red: #d71920;
-    --dark: #111;
-    --cream: #fff8ef;
-}
-
-body {
-    background: var(--cream);
-    color: #171717;
-}
-
-header {
-    background: #111;
-    color: white;
-    padding: 17px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 15px #0004;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    color: white;
-}
-
-.logo span {
-    color: var(--red);
-}
-
-nav {
-    display: flex;
-    gap: 22px;
-    align-items: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ff4040;
-}
-
-.cart-button {
-    background: var(--red);
-    border: none;
-    padding: 12px 18px;
-    color: white;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.hero {
-    min-height: 520px;
-    background:
-    linear-gradient(90deg,#000e,#0005),
-    url("https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1600");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 70px 8%;
-    color: white;
-}
-
-.hero-content {
-    max-width: 620px;
-}
-
-.hero h1 {
-    font-size: clamp(42px,7vw,76px);
-    line-height: 1.05;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #ff3038;
-}
-
-.hero p {
-    font-size: 19px;
-    line-height: 1.7;
-    margin-bottom: 28px;
-}
-
-.main-btn {
-    background: var(--red);
-    color: white;
-    padding: 15px 28px;
-    border-radius: 5px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-
-.main-btn:hover {
-    background: #a90008;
-}
-
-.section {
-    padding: 65px 6%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.section-title h2 {
-    font-size: 36px;
-    font-weight: 900;
-}
-
-.section-title p {
-    color: #777;
-    margin-top: 10px;
-}
-
-.offer {
-    background: var(--red);
-    color: white;
-    padding: 25px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.search-area {
-    display: flex;
-    justify-content: center;
-    margin: 25px auto;
-}
-
-.search-area input {
-    width: 100%;
-    max-width: 550px;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 7px;
-    font-size: 16px;
-}
-
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 25px 0 35px;
-}
-
-.category {
-    background: #222;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 11px 22px;
-    cursor: pointer;
-}
-
-.category.active,
-.category:hover {
-    background: var(--red);
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 25px;
-}
-
-.food-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 18px #0001;
-    transition: .3s;
-}
-
-.food-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px #0002;
-}
-
-.food-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-}
-
-.food-info {
-    padding: 20px;
-}
-
-.food-info h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-.food-info p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.food-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-}
-
-.price {
-    color: var(--red);
-    font-weight: 900;
-    font-size: 19px;
-}
-
-.add-btn {
-    border: none;
-    color: white;
-    background: #171717;
-    padding: 11px 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.add-btn:hover {
-    background: var(--red);
-}
-
-.cart-section {
-    background: #171717;
-    color: white;
-}
-
-.cart-section h2 {
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 25px;
-}
-
-.cart-box {
-    max-width: 750px;
-    margin: auto;
-    background: white;
-    color: #111;
-    border-radius: 10px;
-    padding: 25px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 13px 0;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-}
-
-.quantity button {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none;
-    background: #eee;
-    font-weight: bold;
-}
-
-.total {
-    text-align: right;
-    margin-top: 20px;
-    font-size: 25px;
-    font-weight: 900;
-    color: var(--red);
-}
-
-.cart-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
-
-.clear-btn {
-    border: none;
-    padding: 14px 20px;
-    background: #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.about {
-    text-align: center;
-    max-width: 850px;
-    margin: auto;
-    line-height: 1.9;
-}
-
-.about h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.contact {
-    background: #eee;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    margin: 12px;
-    font-size: 18px;
-}
-
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-    line-height: 2;
-}
-
-.whatsapp-float {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #25d366;
-    color: white;
-    text-decoration: none;
-    padding: 15px 19px;
-    border-radius: 40px;
-    font-weight: bold;
-    box-shadow: 0 3px 12px #0004;
-    z-index: 999;
-}
-
-@media(max-width:700px) {
-    header {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    .hero {
-        min-height: 430px;
-    }
-    .hero h1 {
-        font-size: 45px;
-    }
-    .section {
-        padding: 45px 5%;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+:root{--red:#d71920;--black:#111;--cream:#fffaf5}
+body{background:var(--cream);color:#171717}
+header{background:#111;color:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;position:sticky;top:0;z-index:1000}
+.logo{font-size:25px;font-weight:900}
+.logo span{color:#e51c27}
+nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px}
+nav a:hover{color:#ff4242}
+button{cursor:pointer}
+.cart-top{background:var(--red);color:white;border:0;padding:11px 15px;border-radius:5px;font-weight:bold}
+.hero{min-height:520px;display:flex;align-items:center;padding:65px 8%;color:white;background:linear-gradient(90deg,#000e,#0004),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1600');background-position:center;background-size:cover}
+.hero-content{max-width:600px}
+.hero h1{font-size:clamp(42px,7vw,75px);line-height:1.05;margin-bottom:20px}
+.hero h1 span{color:#ff343c}
+.hero p{font-size:19px;line-height:1.7;margin-bottom:25px}
+.btn{display:inline-block;background:var(--red);color:white;border:0;padding:14px 24px;border-radius:5px;font-weight:bold;text-decoration:none}
+.btn:hover{background:#a90008}
+.promo{background:var(--red);color:white;text-align:center;padding:19px;font-weight:bold;font-size:19px}
+.section{padding:60px 6%}
+.heading{text-align:center;margin-bottom:30px}
+.heading h2{font-size:36px;font-weight:900}
+.heading p{color:#777;margin-top:10px}
+.search{max-width:600px;margin:25px auto}
+.search input{width:100%;padding:15px;border:2px solid #ddd;border-radius:7px;font-size:16px}
+.categories{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
+.cat{background:#222;color:white;border:0;padding:11px 19px;border-radius:25px}
+.cat.active,.cat:hover{background:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:24px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px #0002;transition:.25s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:205px;object-fit:cover}
+.info{padding:18px}
+.info h3{font-size:21px;margin-bottom:8px}
+.info p{color:#777;font-size:14px;min-height:35px;margin-bottom:13px}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{color:var(--red);font-size:19px;font-weight:900}
+.add{background:#171717;color:white;border:0;padding:11px 13px;border-radius:5px;font-weight:bold}
+.add:hover{background:var(--red)}
+.cart-section{background:#151515;color:white}
+.cart-section h2{text-align:center;font-size:35px;margin-bottom:25px}
+.cart-box{max-width:760px;margin:auto;background:white;color:#111;border-radius:10px;padding:23px}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #ddd;padding:14px 0}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{border:0;background:#eee;padding:7px 12px;font-weight:bold}
+.total{text-align:right;color:var(--red);font-size:25px;font-weight:900;margin-top:20px}
+.actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}
+.clear{padding:13px 18px;border:0;background:#ddd;border-radius:5px}
+.about{text-align:center;max-width:850px;margin:auto;line-height:1.9}
+.about h2{font-size:35px;margin-bottom:18px}
+.contact{text-align:center;background:#eee}
+.contact h2{font-size:35px;margin-bottom:20px}
+.contact p{font-size:18px;margin:13px}
+footer{background:#111;color:white;text-align:center;padding:30px;line-height:2}
+.whatsapp{position:fixed;bottom:20px;right:18px;background:#25d366;color:white;text-decoration:none;padding:15px 18px;border-radius:35px;font-weight:bold;z-index:999;box-shadow:0 3px 12px #0005}
+@media(max-width:700px){
+header{justify-content:center;flex-wrap:wrap}
+nav{justify-content:center}
+.hero{min-height:430px;padding:45px 6%}
+.hero h1{font-size:45px}
+.section{padding:45px 5%}
+.grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px}
+.card img{height:155px}
+.info{padding:12px}
+.info h3{font-size:17px}
+.price{font-size:16px}
+.add{padding:9px;font-size:12px}
 }
 </style>
 </head>
@@ -392,388 +81,206 @@ footer {
 <body>
 
 <header>
-    <div class="logo">FYZ <span>PIZZA HUT</span></div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <button class="cart-button"
-        onclick="document.getElementById('cart').scrollIntoView()">
-        🛒 Cart (<span id="cartCount">0</span>)
-        </button>
-    </nav>
+<div class="logo">FYZ <span>PIZZA HUT</span></div>
+<nav>
+<a href="#home">HOME</a>
+<a href="#menu">MENU</a>
+<a href="#about">ABOUT</a>
+<a href="#contact">CONTACT</a>
+<button class="cart-top" onclick="goCart()">🛒 CART (<span id="count">0</span>)</button>
+</nav>
 </header>
 
 <section class="hero" id="home">
-    <div class="hero-content">
-        <h1>FEAST YOUR <span>CRAVINGS!</span></h1>
-        <p>
-            Welcome to FYZ PIZZA HUT.
-            Enjoy delicious food, amazing flavours
-            and a memorable dining experience.
-        </p>
-        <a href="#menu" class="main-btn">ORDER NOW</a>
-    </div>
+<div class="hero-content">
+<h1>IT'S TIME TO <span>FEAST!</span></h1>
+<p>Welcome to FYZ PIZZA HUT. Enjoy crispy chicken, delicious burgers, fresh pizza and amazing fast food.</p>
+<a href="#menu" class="btn">ORDER NOW</a>
+</div>
 </section>
 
-<div class="offer">
-    🔥 WELCOME TO FYZ PIZZA HUT — GREAT FOOD, GREAT TASTE! 🔥
-</div>
+<div class="promo">🔥 BIG FLAVOURS. BIG CRAVINGS. WELCOME TO FYZ! 🔥</div>
 
 <section class="section" id="menu">
+<div class="heading">
+<h2>OUR MENU</h2>
+<p>Your favourite fast food, all in one place.</p>
+</div>
 
-    <div class="section-title">
-        <h2>OUR MENU</h2>
-        <p>Fresh flavours. Delicious food. Made with love.</p>
-    </div>
+<div class="search">
+<input id="search" placeholder="🔍 Search burgers, pizza, fries..." oninput="renderMenu()">
+</div>
 
-    <div class="search-area">
-        <input type="text" id="search"
-        placeholder="🔍 Search your favourite food..."
-        oninput="renderMenu()">
-    </div>
+<div class="categories">
+<button class="cat active" onclick="filter('All',this)">All</button>
+<button class="cat" onclick="filter('Burgers',this)">Burgers</button>
+<button class="cat" onclick="filter('Chicken',this)">Chicken</button>
+<button class="cat" onclick="filter('Pizza',this)">Pizza</button>
+<button class="cat" onclick="filter('Sides',this)">Sides</button>
+<button class="cat" onclick="filter('Drinks',this)">Drinks</button>
+</div>
 
-    <div class="categories">
-        <button class="category active" onclick="filterMenu('All',this)">All</button>
-        <button class="category" onclick="filterMenu('Chicken',this)">Chicken</button>
-        <button class="category" onclick="filterMenu('Rice',this)">Rice</button>
-        <button class="category" onclick="filterMenu('Desi',this)">Desi Food</button>
-        <button class="category" onclick="filterMenu('Drinks',this)">Drinks</button>
-        <button class="category" onclick="filterMenu('Dessert',this)">Desserts</button>
-    </div>
-
-    <div class="menu-grid" id="menuGrid"></div>
+<div class="grid" id="products"></div>
 </section>
 
 <section class="section cart-section" id="cart">
-    <h2>YOUR SHOPPING CART 🛒</h2>
-
-    <div class="cart-box">
-        <div id="cartItems">
-            <p>Your cart is empty. Add some delicious food!</p>
-        </div>
-
-        <div class="total">
-            Total: Rs. <span id="total">0</span>
-        </div>
-
-        <div class="cart-actions">
-            <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
-            <button class="main-btn" onclick="checkout()">
-                ORDER ON WHATSAPP
-            </button>
-        </div>
-    </div>
+<h2>🛒 YOUR SHOPPING CART</h2>
+<div class="cart-box">
+<div id="cartItems">Your cart is empty. Add your favourite food!</div>
+<div class="total">TOTAL: Rs. <span id="total">0</span></div>
+<div class="actions">
+<button class="clear" onclick="clearCart()">CLEAR CART</button>
+<button class="btn" onclick="checkout()">ORDER ON WHATSAPP</button>
+</div>
+</div>
 </section>
 
 <section class="section" id="about">
-    <div class="about">
-        <h2>ABOUT FYZ PIZZA HUT</h2>
-        <p>
-            Welcome to FYZ PIZZA HUT, your destination for
-            delicious food and unforgettable flavours.
-            We aim to bring great taste and a wonderful
-            food experience to every customer.
-        </p>
-        <p>
-            Visit us at DHA Phase 8, Lahore.
-            We look forward to serving you!
-        </p>
-    </div>
+<div class="about">
+<h2>ABOUT FYZ PIZZA HUT</h2>
+<p>Welcome to FYZ PIZZA HUT! We bring you delicious fast food, crispy chicken, tasty burgers, cheesy pizzas and refreshing drinks. Our goal is to make every bite special.</p>
+<p>Visit us at DHA Phase 8, Lahore, Pakistan.</p>
+</div>
 </section>
 
 <section class="section contact" id="contact">
-    <h2>CONTACT US</h2>
-    <p>📍 DHA Phase 8, Lahore, Pakistan</p>
-    <p>📞 03478683781</p>
-    <p>💬 WhatsApp: 03478683781</p>
-
-    <br>
-
-    <a class="main-btn"
-    href="https://wa.me/923478683781"
-    target="_blank">
-        CHAT ON WHATSAPP
-    </a>
+<h2>CONTACT US</h2>
+<p>📍 DHA Phase 8, Lahore, Pakistan</p>
+<p>📞 03478603781</p>
+<p>💬 WhatsApp: 03478683781</p>
+<br>
+<a href="https://wa.me/923478683781" class="btn" target="_blank">CHAT ON WHATSAPP</a>
 </section>
 
 <footer>
-    <h2>FYZ PIZZA HUT</h2>
-    <p>Good Food. Great Taste. Happy Moments.</p>
-    <p>DHA Phase 8, Lahore, Pakistan</p>
-    <p>© 2026 FYZ PIZZA HUT. All Rights Reserved.</p>
+<h2>FYZ PIZZA HUT</h2>
+<p>GOOD FOOD. GREAT TASTE. HAPPY MOMENTS.</p>
+<p>DHA Phase 8, Lahore, Pakistan</p>
+<p>© 2026 FYZ PIZZA HUT. All Rights Reserved.</p>
 </footer>
 
-<a class="whatsapp-float"
-href="https://wa.me/923478683781"
-target="_blank">
-    WhatsApp Order
-</a>
+<a class="whatsapp" href="https://wa.me/923478603781" target="_blank">WhatsApp Order</a>
 
 <script>
-
-const foods = [
-
-{
-name:"Chicken Karahi",
-price:1800,
-category:"Chicken",
-image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=700",
-description:"Traditional spicy chicken karahi."
-},
-
-{
-name:"White Chicken Karahi",
-price:1900,
-category:"Chicken",
-image:"https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=700",
-description:"Creamy and delicious white karahi."
-},
-
-{
-name:"Chicken Kabab",
-price:250,
-category:"Chicken",
-image:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=700",
-description:"Juicy and tasty chicken kabab."
-},
-
-{
-name:"Chicken Biryani",
-price:500,
-category:"Rice",
-image:"https://images.unsplash.com/photo-1563379091339-03246963d51a?w=700",
-description:"Aromatic chicken biryani with spices."
-},
-
-{
-name:"Mix Sabzi",
-price:400,
-category:"Desi",
-image:"https://images.unsplash.com/photo-1547592180-85f173990554?w=700",
-description:"Traditional mixed vegetable curry."
-},
-
-{
-name:"Pulao",
-price:500,
-category:"Rice",
-image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?w=700",
-description:"Delicious aromatic rice pulao."
-},
-
-{
-name:"Haleem",
-price:450,
-category:"Desi",
-image:"https://images.unsplash.com/photo-1547592180-85f173990554?w=700",
-description:"Rich and traditional haleem."
-},
-
-{
-name:"Special Ice Cream",
-price:1500,
-category:"Dessert",
-image:"https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=700",
-description:"Special creamy ice cream."
-},
-
-{
-name:"Cold Drinks",
-price:250,
-category:"Drinks",
-image:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700",
-description:"Refreshing cold drinks. Starting price."
-}
-
+const foods=[
+{name:"Zinger Burger",price:550,cat:"Burgers",desc:"Crispy chicken fillet with fresh lettuce.",img:"https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=700"},
+{name:"Mighty Zinger",price:850,cat:"Burgers",desc:"Extra crispy chicken and double flavour.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"},
+{name:"Chicken Burger",price:400,cat:"Burgers",desc:"Classic chicken burger with sauce.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"},
+{name:"Chicken Cheese Burger",price:500,cat:"Burgers",desc:"Chicken burger with melted cheese.",img:"https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=700"},
+{name:"Chicken Nuggets (6 pcs)",price:450,cat:"Chicken",desc:"Golden crispy chicken nuggets.",img:"https://images.unsplash.com/photo-1562967914-608f82629710?w=700"},
+{name:"Chicken Wings (6 pcs)",price:600,cat:"Chicken",desc:"Crispy and spicy chicken wings.",img:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=700"},
+{name:"Chicken Strips (5 pcs)",price:650,cat:"Chicken",desc:"Tender crispy chicken strips.",img:"https://images.unsplash.com/photo-1562967914-608f82629710?w=700"},
+{name:"Small Pizza",price:700,cat:"Pizza",desc:"Cheesy pizza with delicious toppings.",img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700"},
+{name:"Medium Pizza",price:1200,cat:"Pizza",desc:"Perfect pizza for sharing.",img:"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=700"},
+{name:"Large Pizza",price:1800,cat:"Pizza",desc:"Large cheesy pizza for everyone.",img:"https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700"},
+{name:"French Fries",price:250,cat:"Sides",desc:"Hot and crispy golden fries.",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=700"},
+{name:"Loaded Fries",price:450,cat:"Sides",desc:"Fries topped with cheese and sauce.",img:"https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=700"},
+{name:"Chocolate Shake",price:350,cat:"Drinks",desc:"Rich and creamy chocolate shake.",img:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=700"},
+{name:"Cold Drink",price:250,cat:"Drinks",desc:"Refreshing chilled soft drink.",img:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700"}
 ];
 
-let cart = [];
-let activeCategory = "All";
+let cart=[];
+let category="All";
 
-function renderMenu() {
-
-    const grid = document.getElementById("menuGrid");
-    const search = document.getElementById("search").value.toLowerCase();
-
-    const filtered = foods.filter(food => {
-
-        const matchesCategory =
-        activeCategory === "All" ||
-        food.category === activeCategory;
-
-        const matchesSearch =
-        food.name.toLowerCase().includes(search);
-
-        return matchesCategory && matchesSearch;
-    });
-
-    grid.innerHTML = "";
-
-    filtered.forEach(food => {
-
-        grid.innerHTML += `
-        <div class="food-card">
-            <img src="${food.image}"
-            alt="${food.name}"
-            loading="lazy">
-
-            <div class="food-info">
-                <h3>${food.name}</h3>
-                <p>${food.description}</p>
-
-                <div class="food-bottom">
-                    <span class="price">
-                    Rs. ${food.price}
-                    </span>
-
-                    <button class="add-btn"
-                    onclick="addToCart('${food.name}')">
-                    + ADD
-                    </button>
-                </div>
-            </div>
-        </div>
-        `;
-    });
-
-    if(filtered.length === 0) {
-        grid.innerHTML = "<p>No food items found.</p>";
-    }
+function renderMenu(){
+let search=document.getElementById("search").value.toLowerCase();
+let list=foods.filter(f=>
+(category==="All"||f.cat===category)&&
+f.name.toLowerCase().includes(search)
+);
+let html="";
+list.forEach(f=>{
+html+=`
+<div class="card">
+<img src="${f.img}" alt="${f.name}" loading="lazy">
+<div class="info">
+<h3>${f.name}</h3>
+<p>${f.desc}</p>
+<div class="bottom">
+<span class="price">Rs. ${f.price}</span>
+<button class="add" onclick="add('${f.name}')">+ ADD</button>
+</div>
+</div>
+</div>`;
+});
+document.getElementById("products").innerHTML=html||"<p>No items found.</p>";
 }
 
-function filterMenu(category,button) {
-
-    activeCategory = category;
-
-    document.querySelectorAll(".category").forEach(btn => {
-        btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    renderMenu();
+function filter(cat,btn){
+category=cat;
+document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+renderMenu();
 }
 
-function addToCart(name) {
-
-    const food = foods.find(item => item.name === name);
-
-    const existing = cart.find(item => item.name === name);
-
-    if(existing) {
-        existing.quantity++;
-    } else {
-        cart.push({
-            name: food.name,
-            price: food.price,
-            quantity: 1
-        });
-    }
-
-    updateCart();
+function add(name){
+let food=foods.find(f=>f.name===name);
+let item=cart.find(i=>i.name===name);
+if(item)item.qty++;
+else cart.push({name:food.name,price:food.price,qty:1});
+updateCart();
 }
 
-function changeQuantity(name,amount) {
-
-    const item = cart.find(i => i.name === name);
-
-    if(!item) return;
-
-    item.quantity += amount;
-
-    if(item.quantity <= 0) {
-        cart = cart.filter(i => i.name !== name);
-    }
-
-    updateCart();
+function quantity(name,change){
+let item=cart.find(i=>i.name===name);
+if(!item)return;
+item.qty+=change;
+if(item.qty<=0)cart=cart.filter(i=>i.name!==name);
+updateCart();
 }
 
-function updateCart() {
-
-    const container = document.getElementById("cartItems");
-
-    let total = 0;
-    let count = 0;
-
-    if(cart.length === 0) {
-        container.innerHTML =
-        "<p>Your cart is empty. Add some delicious food!</p>";
-    } else {
-
-        container.innerHTML = "";
-
-        cart.forEach(item => {
-
-            const subtotal = item.price * item.quantity;
-
-            total += subtotal;
-            count += item.quantity;
-
-            container.innerHTML += `
-            <div class="cart-item">
-
-                <div>
-                    <strong>${item.name}</strong><br>
-                    Rs. ${subtotal}
-                </div>
-
-                <div class="quantity">
-                    <button onclick="changeQuantity('${item.name}',-1)">−</button>
-                    ${item.quantity}
-                    <button onclick="changeQuantity('${item.name}',1)">+</button>
-                </div>
-
-            </div>
-            `;
-        });
-    }
-
-    document.getElementById("total").innerText = total;
-    document.getElementById("cartCount").innerText = count;
+function updateCart(){
+let box=document.getElementById("cartItems");
+let total=0,count=0;
+if(!cart.length){
+box.innerHTML="Your cart is empty. Add your favourite food!";
+}else{
+box.innerHTML="";
+cart.forEach(i=>{
+let sub=i.price*i.qty;
+total+=sub;
+count+=i.qty;
+box.innerHTML+=`
+<div class="cart-item">
+<div><b>${i.name}</b><br>Rs. ${sub}</div>
+<div class="qty">
+<button onclick="quantity('${i.name}',-1)">−</button>
+${i.qty}
+<button onclick="quantity('${i.name}',1)">+</button>
+</div>
+</div>`;
+});
+}
+document.getElementById("total").textContent=total;
+document.getElementById("count").textContent=count;
 }
 
-function clearCart() {
-    cart = [];
-    updateCart();
+function clearCart(){
+cart=[];
+updateCart();
 }
 
-function checkout() {
+function goCart(){
+document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
 
-    if(cart.length === 0) {
-        alert("Please add food to your cart first!");
-        return;
-    }
-
-    let message = "Hello FYZ PIZZA HUT! I want to place an order:\n\n";
-
-    cart.forEach(item => {
-        message +=
-        item.name + " x " + item.quantity +
-        " = Rs. " + (item.price * item.quantity) + "\n";
-    });
-
-    const total = cart.reduce(
-        (sum,item) => sum + item.price * item.quantity,0
-    );
-
-    message += "\nTotal Bill: Rs. " + total;
-    message += "\n\nPlease confirm my order.";
-
-    const url =
-    "https://wa.me/923478683781?text=" +
-    encodeURIComponent(message);
-
-    window.open(url,"_blank");
+function checkout(){
+if(!cart.length){
+alert("Please add food to your cart first!");
+return;
+}
+let message="Hello FYZ PIZZA HUT! I want to place an order:\n\n";
+cart.forEach(i=>{
+message+=i.name+" x "+i.qty+" = Rs. "+(i.price*i.qty)+"\n";
+});
+let total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+message+="\nTOTAL: Rs. "+total;
+message+="\n\nPlease confirm my order.";
+window.open("https://wa.me/923478603781?text="+encodeURIComponent(message),"_blank");
 }
 
 renderMenu();
 updateCart();
-
 </script>
-
 </body>
-  </html>
-  
+</html>
