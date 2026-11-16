@@ -4,279 +4,396 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FYZ PIZZA HUT | Fast Food</title>
-
+<title>FYZ PIZZA HUT | Premium Fast Food</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-:root{--red:#d71920;--black:#111;--cream:#fffaf5}
-body{background:var(--cream);color:#171717}
-header{background:#111;color:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;position:sticky;top:0;z-index:1000}
+:root {
+  --red:#ed2027;
+  --dark:#101010;
+  --card:#1b1b1b;
+  --white:#fff;
+  --muted:#aaa;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--dark);
+  color:white;
+  font-family:Arial,sans-serif;
+}
+header{
+  position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;
+  align-items:center;padding:17px 7%;
+  background:rgba(10,10,10,.96);
+  border-bottom:1px solid #292929;
+}
 .logo{font-size:25px;font-weight:900}
-.logo span{color:#e51c27}
-nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px}
-nav a:hover{color:#ff4242}
-button{cursor:pointer}
-.cart-top{background:var(--red);color:white;border:0;padding:11px 15px;border-radius:5px;font-weight:bold}
-.hero{min-height:520px;display:flex;align-items:center;padding:65px 8%;color:white;background:linear-gradient(90deg,#000e,#0004),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1600');background-position:center;background-size:cover}
-.hero-content{max-width:600px}
-.hero h1{font-size:clamp(42px,7vw,75px);line-height:1.05;margin-bottom:20px}
-.hero h1 span{color:#ff343c}
-.hero p{font-size:19px;line-height:1.7;margin-bottom:25px}
-.btn{display:inline-block;background:var(--red);color:white;border:0;padding:14px 24px;border-radius:5px;font-weight:bold;text-decoration:none}
-.btn:hover{background:#a90008}
-.promo{background:var(--red);color:white;text-align:center;padding:19px;font-weight:bold;font-size:19px}
-.section{padding:60px 6%}
-.heading{text-align:center;margin-bottom:30px}
-.heading h2{font-size:36px;font-weight:900}
-.heading p{color:#777;margin-top:10px}
-.search{max-width:600px;margin:25px auto}
-.search input{width:100%;padding:15px;border:2px solid #ddd;border-radius:7px;font-size:16px}
-.categories{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
-.cat{background:#222;color:white;border:0;padding:11px 19px;border-radius:25px}
-.cat.active,.cat:hover{background:var(--red)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:24px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px #0002;transition:.25s}
-.card:hover{transform:translateY(-5px)}
-.card img{width:100%;height:205px;object-fit:cover}
-.info{padding:18px}
-.info h3{font-size:21px;margin-bottom:8px}
-.info p{color:#777;font-size:14px;min-height:35px;margin-bottom:13px}
-.bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.price{color:var(--red);font-size:19px;font-weight:900}
-.add{background:#171717;color:white;border:0;padding:11px 13px;border-radius:5px;font-weight:bold}
-.add:hover{background:var(--red)}
-.cart-section{background:#151515;color:white}
-.cart-section h2{text-align:center;font-size:35px;margin-bottom:25px}
-.cart-box{max-width:760px;margin:auto;background:white;color:#111;border-radius:10px;padding:23px}
-.cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #ddd;padding:14px 0}
-.qty{display:flex;align-items:center;gap:10px}
-.qty button{border:0;background:#eee;padding:7px 12px;font-weight:bold}
-.total{text-align:right;color:var(--red);font-size:25px;font-weight:900;margin-top:20px}
-.actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}
-.clear{padding:13px 18px;border:0;background:#ddd;border-radius:5px}
-.about{text-align:center;max-width:850px;margin:auto;line-height:1.9}
-.about h2{font-size:35px;margin-bottom:18px}
-.contact{text-align:center;background:#eee}
-.contact h2{font-size:35px;margin-bottom:20px}
-.contact p{font-size:18px;margin:13px}
-footer{background:#111;color:white;text-align:center;padding:30px;line-height:2}
-.whatsapp{position:fixed;bottom:20px;right:18px;background:#25d366;color:white;text-decoration:none;padding:15px 18px;border-radius:35px;font-weight:bold;z-index:999;box-shadow:0 3px 12px #0005}
+.logo span{color:var(--red)}
+nav{display:flex;gap:22px}
+nav a{color:white;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--red)}
+.cart-btn{
+  background:var(--red);border:0;color:white;
+  padding:12px 18px;border-radius:8px;
+  font-weight:bold;cursor:pointer;
+}
+.hero{
+  min-height:580px;padding:80px 8%;
+  display:flex;align-items:center;
+  background:linear-gradient(90deg,#090909 10%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.1)),
+  url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600') center/cover;
+}
+.hero-content{max-width:570px}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05}
+.hero h1 span{color:var(--red)}
+.hero p{color:#ddd;font-size:18px;line-height:1.7;margin:20px 0}
+.btn{
+  display:inline-block;background:var(--red);
+  padding:15px 24px;border-radius:7px;
+  color:white;text-decoration:none;font-weight:bold;
+  border:0;cursor:pointer;
+}
+.btn:hover{background:#bd1118}
+.section{padding:75px 7%}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:36px}
+.heading h2 span{color:var(--red)}
+.heading p{color:var(--muted);margin-top:10px}
+.offer{
+  margin:20px 7%;padding:35px;
+  border-radius:15px;
+  background:linear-gradient(120deg,#c51019,#63090d);
+  display:flex;justify-content:space-between;
+  align-items:center;gap:20px;flex-wrap:wrap;
+}
+.offer h2{font-size:30px}
+.search{
+  display:block;width:100%;max-width:500px;
+  margin:0 auto 25px;padding:15px;
+  border-radius:8px;border:1px solid #444;
+  background:#222;color:white;font-size:16px;
+}
+.categories{
+  display:flex;justify-content:center;
+  flex-wrap:wrap;gap:10px;margin-bottom:30px;
+}
+.categories button{
+  background:#292929;color:white;
+  border:1px solid #444;padding:11px 18px;
+  border-radius:30px;cursor:pointer;
+}
+.categories button.active,
+.categories button:hover{
+  background:var(--red);border-color:var(--red);
+}
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:23px;
+}
+.item{
+  background:var(--card);border-radius:13px;
+  overflow:hidden;border:1px solid #303030;
+  transition:.3s;
+}
+.item:hover{transform:translateY(-7px);border-color:var(--red)}
+.item img{width:100%;height:190px;object-fit:cover}
+.item-info{padding:18px}
+.item-info h3{font-size:20px;margin-bottom:9px}
+.item-info p{color:var(--muted);font-size:14px}
+.price{color:#ff4148;font-size:21px;font-weight:bold;margin:14px 0}
+.item button{
+  width:100%;background:var(--red);
+  color:white;padding:12px;border:0;
+  border-radius:7px;font-weight:bold;cursor:pointer;
+}
+.item button:hover{background:#bd1118}
+.about{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:40px;align-items:center;
+}
+.about img{width:100%;border-radius:15px}
+.about p{color:#bbb;line-height:1.8;margin:15px 0}
+.contact{text-align:center;background:#191919}
+.contact p{color:#ccc;margin:15px}
+footer{
+  background:#080808;text-align:center;
+  padding:30px;color:#aaa;line-height:2;
+}
+.whatsapp{
+  position:fixed;right:20px;bottom:20px;
+  background:#20c968;color:white;
+  padding:15px 19px;border-radius:50px;
+  text-decoration:none;font-weight:bold;
+  z-index:110;box-shadow:0 5px 20px #0008;
+}
+.cart-panel{
+  position:fixed;right:-450px;top:0;
+  width:min(400px,100%);height:100vh;
+  background:#171717;z-index:200;
+  padding:25px;transition:.3s;
+  overflow-y:auto;border-left:1px solid #444;
+}
+.cart-panel.open{right:0}
+.cart-header{display:flex;justify-content:space-between;margin-bottom:25px}
+.close{background:none;color:white;border:0;font-size:28px;cursor:pointer}
+.cart-row{
+  display:flex;justify-content:space-between;
+  gap:10px;padding:14px 0;border-bottom:1px solid #444;
+}
+.qty button{
+  background:#333;color:white;border:0;
+  padding:5px 9px;cursor:pointer;
+}
+.total{font-size:22px;color:#ff4148;margin:25px 0}
+.checkout-input{
+  width:100%;padding:13px;margin:7px 0;
+  background:#292929;color:white;
+  border:1px solid #555;border-radius:6px;
+}
+.empty{text-align:center;color:#aaa;padding:30px 0}
 @media(max-width:700px){
-header{justify-content:center;flex-wrap:wrap}
-nav{justify-content:center}
-.hero{min-height:430px;padding:45px 6%}
-.hero h1{font-size:45px}
-.section{padding:45px 5%}
-.grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px}
-.card img{height:155px}
-.info{padding:12px}
-.info h3{font-size:17px}
-.price{font-size:16px}
-.add{padding:9px;font-size:12px}
+  nav{display:none}
+  header{padding:15px 5%}
+  .hero{min-height:500px;padding:55px 6%}
+  .section{padding:55px 5%}
+  .about{grid-template-columns:1fr}
+  .offer{margin:15px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">FYZ <span>PIZZA HUT</span></div>
-<nav>
-<a href="#home">HOME</a>
-<a href="#menu">MENU</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">CONTACT</a>
-<button class="cart-top" onclick="goCart()">🛒 CART (<span id="count">0</span>)</button>
-</nav>
+  <div class="logo">FYZ <span>PIZZA HUT</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Cart (<span id="count">0</span>)
+  </button>
 </header>
 
 <section class="hero" id="home">
-<div class="hero-content">
-<h1>IT'S TIME TO <span>FEAST!</span></h1>
-<p>Welcome to FYZ PIZZA HUT. Enjoy crispy chicken, delicious burgers, fresh pizza and amazing fast food.</p>
-<a href="#menu" class="btn">ORDER NOW</a>
-</div>
+  <div class="hero-content">
+    <h1>BIG TASTE.<br><span>BIG HAPPINESS.</span></h1>
+    <p>Welcome to FYZ PIZZA HUT. Enjoy delicious burgers,
+    crispy chicken, fresh pizza and much more.</p>
+    <a href="#menu" class="btn">EXPLORE OUR MENU →</a>
+  </div>
 </section>
 
-<div class="promo">🔥 BIG FLAVOURS. BIG CRAVINGS. WELCOME TO FYZ! 🔥</div>
+<div class="offer">
+  <div>
+    <h2>🔥 CRAVING SOMETHING DELICIOUS?</h2>
+    <p>Discover your favourite fast food today!</p>
+  </div>
+  <a href="#menu" class="btn">ORDER NOW</a>
+</div>
 
 <section class="section" id="menu">
-<div class="heading">
-<h2>OUR MENU</h2>
-<p>Your favourite fast food, all in one place.</p>
-</div>
+  <div class="heading">
+    <h2>OUR <span>DELICIOUS MENU</span></h2>
+    <p>Fresh taste. Amazing food. Great prices.</p>
+  </div>
 
-<div class="search">
-<input id="search" placeholder="🔍 Search burgers, pizza, fries..." oninput="renderMenu()">
-</div>
+  <input class="search" id="search"
+  placeholder="🔍 Search your favourite food..."
+  oninput="renderMenu()">
 
-<div class="categories">
-<button class="cat active" onclick="filter('All',this)">All</button>
-<button class="cat" onclick="filter('Burgers',this)">Burgers</button>
-<button class="cat" onclick="filter('Chicken',this)">Chicken</button>
-<button class="cat" onclick="filter('Pizza',this)">Pizza</button>
-<button class="cat" onclick="filter('Sides',this)">Sides</button>
-<button class="cat" onclick="filter('Drinks',this)">Drinks</button>
-</div>
+  <div class="categories" id="categories">
+    <button class="active" onclick="setCategory('All',this)">All</button>
+    <button onclick="setCategory('Burgers',this)">Burgers</button>
+    <button onclick="setCategory('Chicken',this)">Chicken</button>
+    <button onclick="setCategory('Pizza',this)">Pizza</button>
+    <button onclick="setCategory('Sides',this)">Sides</button>
+    <button onclick="setCategory('Drinks',this)">Drinks</button>
+  </div>
 
-<div class="grid" id="products"></div>
-</section>
-
-<section class="section cart-section" id="cart">
-<h2>🛒 YOUR SHOPPING CART</h2>
-<div class="cart-box">
-<div id="cartItems">Your cart is empty. Add your favourite food!</div>
-<div class="total">TOTAL: Rs. <span id="total">0</span></div>
-<div class="actions">
-<button class="clear" onclick="clearCart()">CLEAR CART</button>
-<button class="btn" onclick="checkout()">ORDER ON WHATSAPP</button>
-</div>
-</div>
+  <div class="menu-grid" id="menuGrid"></div>
 </section>
 
 <section class="section" id="about">
-<div class="about">
-<h2>ABOUT FYZ PIZZA HUT</h2>
-<p>Welcome to FYZ PIZZA HUT! We bring you delicious fast food, crispy chicken, tasty burgers, cheesy pizzas and refreshing drinks. Our goal is to make every bite special.</p>
-<p>Visit us at DHA Phase 8, Lahore, Pakistan.</p>
-</div>
+  <div class="about">
+    <div>
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900"
+      alt="Delicious pizza">
+    </div>
+    <div>
+      <div class="heading" style="text-align:left">
+        <h2>ABOUT <span>FYZ</span></h2>
+      </div>
+      <p>Welcome to FYZ PIZZA HUT, your destination for
+      delicious fast food in DHA Phase 8, Lahore.</p>
+      <p>From juicy burgers and crispy chicken to
+      mouth-watering pizzas, we bring flavour and
+      happiness to every order.</p>
+      <a href="#menu" class="btn">VIEW MENU</a>
+    </div>
+  </div>
 </section>
 
 <section class="section contact" id="contact">
-<h2>CONTACT US</h2>
-<p>📍 DHA Phase 8, Lahore, Pakistan</p>
-<p>📞 03478603781</p>
-<p>💬 WhatsApp: 03478683781</p>
-<br>
-<a href="https://wa.me/923478683781" class="btn" target="_blank">CHAT ON WHATSAPP</a>
+  <div class="heading">
+    <h2>GET IN <span>TOUCH</span></h2>
+    <p>We are ready for your order!</p>
+  </div>
+  <p>📍 DHA Phase 8, Lahore, Pakistan</p>
+  <p>📞 +92 347 8603781</p>
+  <a class="btn" href="https://wa.me/923478603781">
+    ORDER ON WHATSAPP
+  </a>
 </section>
 
 <footer>
-<h2>FYZ PIZZA HUT</h2>
-<p>GOOD FOOD. GREAT TASTE. HAPPY MOMENTS.</p>
-<p>DHA Phase 8, Lahore, Pakistan</p>
-<p>© 2026 FYZ PIZZA HUT. All Rights Reserved.</p>
+  <h2>FYZ <span style="color:red">PIZZA HUT</span></h2>
+  Delicious Food. Happy Moments.
+  <br>DHA Phase 8, Lahore, Pakistan
+  <br>© 2026 FYZ PIZZA HUT. All Rights Reserved.
 </footer>
 
-<a class="whatsapp" href="https://wa.me/923478603781" target="_blank">WhatsApp Order</a>
+<a class="whatsapp" href="https://wa.me/923478603781">
+  ☎ WhatsApp
+</a>
+
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button class="close" onclick="closeCart()">×</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="total">Total: Rs. <span id="total">0</span></div>
+  <input class="checkout-input" id="customerName"
+  placeholder="Your Name">
+  <input class="checkout-input" id="customerPhone"
+  placeholder="Phone Number">
+  <textarea class="checkout-input" id="customerAddress"
+  placeholder="Delivery Address"></textarea>
+  <button class="btn" style="width:100%"
+  onclick="checkout()">ORDER ON WHATSAPP</button>
+</div>
 
 <script>
-const foods=[
-{name:"Zinger Burger",price:550,cat:"Burgers",desc:"Crispy chicken fillet with fresh lettuce.",img:"https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=700"},
-{name:"Mighty Zinger",price:850,cat:"Burgers",desc:"Extra crispy chicken and double flavour.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"},
-{name:"Chicken Burger",price:400,cat:"Burgers",desc:"Classic chicken burger with sauce.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"},
-{name:"Chicken Cheese Burger",price:500,cat:"Burgers",desc:"Chicken burger with melted cheese.",img:"https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=700"},
-{name:"Chicken Nuggets (6 pcs)",price:450,cat:"Chicken",desc:"Golden crispy chicken nuggets.",img:"https://images.unsplash.com/photo-1562967914-608f82629710?w=700"},
-{name:"Chicken Wings (6 pcs)",price:600,cat:"Chicken",desc:"Crispy and spicy chicken wings.",img:"https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=700"},
-{name:"Chicken Strips (5 pcs)",price:650,cat:"Chicken",desc:"Tender crispy chicken strips.",img:"https://images.unsplash.com/photo-1562967914-608f82629710?w=700"},
-{name:"Small Pizza",price:700,cat:"Pizza",desc:"Cheesy pizza with delicious toppings.",img:"https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700"},
-{name:"Medium Pizza",price:1200,cat:"Pizza",desc:"Perfect pizza for sharing.",img:"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=700"},
-{name:"Large Pizza",price:1800,cat:"Pizza",desc:"Large cheesy pizza for everyone.",img:"https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700"},
-{name:"French Fries",price:250,cat:"Sides",desc:"Hot and crispy golden fries.",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=700"},
-{name:"Loaded Fries",price:450,cat:"Sides",desc:"Fries topped with cheese and sauce.",img:"https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=700"},
-{name:"Chocolate Shake",price:350,cat:"Drinks",desc:"Rich and creamy chocolate shake.",img:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=700"},
-{name:"Cold Drink",price:250,cat:"Drinks",desc:"Refreshing chilled soft drink.",img:"https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700"}
+const products=[
+{name:"Zinger Burger",price:550,cat:"Burgers",img:"photo-1568901346375-23c9450c58cd"},
+{name:"Mighty Zinger",price:850,cat:"Burgers",img:"photo-1553979459-d2229ba7433b"},
+{name:"Chicken Burger",price:400,cat:"Burgers",img:"photo-1571091718767-18b5b1457add"},
+{name:"Cheese Burger",price:500,cat:"Burgers",img:"photo-1561758033-d89a9ad46330"},
+{name:"Chicken Nuggets",price:450,cat:"Chicken",img:"photo-1562967914-608f82629710"},
+{name:"Chicken Wings",price:600,cat:"Chicken",img:"photo-1527477396000-e27163b481c2"},
+{name:"Chicken Strips",price:650,cat:"Chicken",img:"photo-1562967914-608f82629710"},
+{name:"French Fries",price:250,cat:"Sides",img:"photo-1573080496219-bb080dd4f877"},
+{name:"Loaded Fries",price:450,cat:"Sides",img:"photo-1518013431117-eb1465fa5752"},
+{name:"Small Pizza",price:700,cat:"Pizza",img:"photo-1513104890138-7c749659a591"},
+{name:"Medium Pizza",price:1200,cat:"Pizza",img:"photo-1571407970349-bc81e7e96d47"},
+{name:"Large Pizza",price:1800,cat:"Pizza",img:"photo-1579751626657-72bc17010498"},
+{name:"Chocolate Shake",price:350,cat:"Drinks",img:"photo-1572490122747-3968b75cc699"},
+{name:"Cold Drink",price:250,cat:"Drinks",img:"photo-1544145945-f90425340c7e"}
 ];
 
 let cart=[];
 let category="All";
 
+function setCategory(cat,btn){
+ category=cat;
+ document.querySelectorAll(".categories button")
+ .forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ renderMenu();
+}
+
 function renderMenu(){
-let search=document.getElementById("search").value.toLowerCase();
-let list=foods.filter(f=>
-(category==="All"||f.cat===category)&&
-f.name.toLowerCase().includes(search)
-);
-let html="";
-list.forEach(f=>{
-html+=`
-<div class="card">
-<img src="${f.img}" alt="${f.name}" loading="lazy">
-<div class="info">
-<h3>${f.name}</h3>
-<p>${f.desc}</p>
-<div class="bottom">
-<span class="price">Rs. ${f.price}</span>
-<button class="add" onclick="add('${f.name}')">+ ADD</button>
-</div>
-</div>
-</div>`;
-});
-document.getElementById("products").innerHTML=html||"<p>No items found.</p>";
+ const search=document.getElementById("search").value.toLowerCase();
+ const grid=document.getElementById("menuGrid");
+ const filtered=products.filter(p=>
+ (category==="All"||p.cat===category)&&
+ p.name.toLowerCase().includes(search)
+ );
+ grid.innerHTML=filtered.map(p=>`
+ <div class="item">
+ <img src="https://images.unsplash.com/${p.img}?w=600&auto=format&fit=crop"
+ alt="${p.name}" loading="lazy">
+ <div class="item-info">
+ <h3>${p.name}</h3>
+ <p>Freshly prepared and full of flavour.</p>
+ <div class="price">Rs. ${p.price}</div>
+ <button onclick="addToCart('${p.name}')">ADD TO CART +</button>
+ </div></div>`).join("")||
+ "<p>No matching food found.</p>";
 }
 
-function filter(cat,btn){
-category=cat;
-document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-renderMenu();
+function addToCart(name){
+ const p=products.find(x=>x.name===name);
+ const found=cart.find(x=>x.name===name);
+ if(found)found.qty++;
+ else cart.push({...p,qty:1});
+ updateCart();
 }
 
-function add(name){
-let food=foods.find(f=>f.name===name);
-let item=cart.find(i=>i.name===name);
-if(item)item.qty++;
-else cart.push({name:food.name,price:food.price,qty:1});
-updateCart();
-}
-
-function quantity(name,change){
-let item=cart.find(i=>i.name===name);
-if(!item)return;
-item.qty+=change;
-if(item.qty<=0)cart=cart.filter(i=>i.name!==name);
-updateCart();
+function changeQty(name,amount){
+ const item=cart.find(x=>x.name===name);
+ if(!item)return;
+ item.qty+=amount;
+ cart=cart.filter(x=>x.qty>0);
+ updateCart();
 }
 
 function updateCart(){
-let box=document.getElementById("cartItems");
-let total=0,count=0;
-if(!cart.length){
-box.innerHTML="Your cart is empty. Add your favourite food!";
-}else{
-box.innerHTML="";
-cart.forEach(i=>{
-let sub=i.price*i.qty;
-total+=sub;
-count+=i.qty;
-box.innerHTML+=`
-<div class="cart-item">
-<div><b>${i.name}</b><br>Rs. ${sub}</div>
-<div class="qty">
-<button onclick="quantity('${i.name}',-1)">−</button>
-${i.qty}
-<button onclick="quantity('${i.name}',1)">+</button>
-</div>
-</div>`;
-});
-}
-document.getElementById("total").textContent=total;
-document.getElementById("count").textContent=count;
+ document.getElementById("count").textContent=
+ cart.reduce((s,x)=>s+x.qty,0);
+ document.getElementById("cartItems").innerHTML=
+ cart.length?cart.map(x=>`
+ <div class="cart-row">
+ <div><b>${x.name}</b><br>Rs. ${x.price} × ${x.qty}</div>
+ <div class="qty">
+ <button onclick="changeQty('${x.name}',-1)">−</button>
+ ${x.qty}
+ <button onclick="changeQty('${x.name}',1)">+</button>
+ </div></div>`).join("") :
+ '<div class="empty">Your cart is empty!</div>';
+
+ document.getElementById("total").textContent=
+ cart.reduce((s,x)=>s+x.price*x.qty,0);
 }
 
-function clearCart(){
-cart=[];
-updateCart();
+function openCart(){
+ document.getElementById("cartPanel").classList.add("open");
 }
-
-function goCart(){
-document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+function closeCart(){
+ document.getElementById("cartPanel").classList.remove("open");
 }
 
 function checkout(){
-if(!cart.length){
-alert("Please add food to your cart first!");
-return;
-}
-let message="Hello FYZ PIZZA HUT! I want to place an order:\n\n";
-cart.forEach(i=>{
-message+=i.name+" x "+i.qty+" = Rs. "+(i.price*i.qty)+"\n";
-});
-let total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
-message+="\nTOTAL: Rs. "+total;
-message+="\n\nPlease confirm my order.";
-window.open("https://wa.me/923478603781?text="+encodeURIComponent(message),"_blank");
+ if(!cart.length){
+  alert("Please add food to your cart first!");
+  return;
+ }
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+
+ if(!name||!phone||!address){
+  alert("Please enter your name, phone and address.");
+  return;
+ }
+
+ let message="*NEW ORDER - FYZ PIZZA HUT*%0A%0A";
+ message+="Customer: "+encodeURIComponent(name)+"%0A";
+ message+="Phone: "+encodeURIComponent(phone)+"%0A";
+ message+="Address: "+encodeURIComponent(address)+"%0A%0A";
+ message+="*ORDER DETAILS*%0A";
+
+ cart.forEach(x=>{
+  message+=encodeURIComponent(x.name+" x "+x.qty+
+  " = Rs. "+(x.price*x.qty))+"%0A";
+ });
+ message+="%0A*TOTAL: Rs. "+
+ cart.reduce((s,x)=>s+x.price*x.qty,0)+"*";
+
+ window.open("https://wa.me/923478603781?text="+message,"_blank");
 }
 
 renderMenu();
